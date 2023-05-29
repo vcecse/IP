@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User Information</title>
+	<meta charset="UTF-8">
+</head>
+<body>
+	<label for="jntuno">Enter JNTU Number:</label>
+	<input type="text" id="jntuno" name="jntuno">
+	<button onclick="getUserData()">Get User Data</button>
+	<p id="output"></p>
+
+	<script>
+		function getUserData() {
+            var xmlDoc=new ActiveXObject("Microsoft.XMLDOM");
+            xmlDoc.load("data.xml");
+			var jntuno = document.getElementById("jntuno").value;
+			var userData = document.getElementsByTagName("userdata")[0];
+			var users = userData.getElementsByTagName("user");
+			var output = document.getElementById("output");
+			for (var i = 0; i < users.length; i++) {
+				var user = users[i];
+				var jntunoElement = user.getElementsByTagName("jntuno")[0];
+				if (jntunoElement.textContent == jntuno) {
+					var name = user.getElementsByTagName("name")[0].textContent;
+					var address = user.getElementsByTagName("address")[0].textContent;
+					output.innerHTML = "Name: " + name + "<br>Address: " + address;
+					return;
+				}
+			}
+			output.innerHTML = "User not found.";
+		}
+	</script>
+</body>
+</html>

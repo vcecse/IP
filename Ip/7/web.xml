@@ -1,0 +1,20 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <welcome-file-list>
+    <welcome-file>Main.html</welcome-file>
+    <welcome-file>Login.html</welcome-file>
+    <welcome-file>Order.html</welcome-file>
+    <welcome-file>Profile.html</welcome-file>
+    <welcome-file>Catalog.html</welcome-file>
+    <welcome-file>Login.jsp</welcome-file>
+    <welcome-file>Order.jsp</welcome-file>
+    <welcome-file>Profile.jsp</welcome-file>
+    <welcome-file>Catalog.jsp</welcome-file>
+    <welcome-file>Reg.html</welcome-file>
+    <welcome-file>Reg.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User Data Retrieval</title>
+	<script>
+		function getUserData() {
+			// Get the user's jntuno from the input field
+			var jntuno = document.getElementById("jntuno").value;
+
+			// Load the XML document
+			var xmlhttp = new XMLHttpRequest();
+			xmlhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					// Parse the XML document
+					var xmlDoc = this.responseXML;
+
+					// Get the user element with matching jntuno
+					var user = xmlDoc.querySelector("userdata user" + jntuno);
+
+					// Display the user data in the output field
+					document.getElementById("output").innerHTML = "Name: " + user.querySelector("name").textContent + "<br>Phone: " + user.querySelector("phno").textContent + "<br>Address: " + user.querySelector("address").textContent;
+				}
+			};
+			xmlhttp.open("GET", "userdata.xml", true);
+			xmlhttp.send();
+		}
+	</script>
+</head>
+<body>
+	<h1>User Data Retrieval</h1>
+	<form>
+		<label for="jntuno">Enter JNTU No:</label>
+		<input type="text" id="jntuno" name="jntuno">
+		<button type="button" onclick="getUserData()">Get Data</button>
+	</form>
+	<div id="output"></div>
+</body>
+</html>

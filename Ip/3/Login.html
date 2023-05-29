@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>
+            Login
+        </title>
+    </head>
+
+<body bgcolor="pink"><br><br><br>
+    <script language="javascript">
+        function validate() {
+            var flag = 1;
+            if (document.myform.id.value == "Hello" ||
+                document.myform.pwd.value == "World") {
+                flag = 0;
+            }
+            if (flag == 0) {
+                alert("VALID INPUT");
+            }
+            else {
+                alert("INVALID INPUT");
+                document.myform.focus();
+            }
+        }
+    </script>
+    <form name="myform">
+        <div align="center">
+            <pre>
+LOGIN ID : <input type="text" name="id"><br> 
+PASSWORD : <input type="password" name="pwd">
+</pre><br><br>
+        </div>
+        <div align="center">
+            <input type="submit" value="ok" onClick="validate()">&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="reset" value="clear">
+        </div>
+    </form>
+</body>
+
+</html>
